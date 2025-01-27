@@ -1,0 +1,170 @@
+@use "functions" as func;
+
+$cream: #f2eae2;
+$aurometal-saurus: #6c7289;
+$deep-aquamarine: #3d8168;
+$deep-aquamarine-hover: #1a4032;
+$gunmetal: #1c232b;
+
+$display-font-size: func.rem(32px);
+$display-font-family: "Fraunces";
+$display-font-weight: 700;
+$display-line-height: 32px;
+$display-letter-spacing: 0;
+
+$body-font-size: func.rem(14px);
+$body-font-family: "Montserrat", sans-serif;
+$body-font-weight: 500;
+$body-line-height: 23px;
+$body-letter-spacing: 0;
+
+$button-font-size: func.rem(14px);
+$button-font-family: "Montserrat", sans-serif;
+$button-font-weight: 700;
+$button-letter-spacing: 0;
+
+$overline-font-size: func.rem(12px);
+$overline-font-family: "Montserrat", sans-serif;
+$overline-font-weight: 500;
+$overline-letter-spacing: 5px;
+
+.display-text {
+  font-family: $display-font-family;
+  font-size: $display-font-size;
+  font-weight: $display-font-weight;
+  letter-spacing: $display-letter-spacing;
+  line-height: $display-line-height;
+}
+
+.body-text {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+  letter-spacing: $body-letter-spacing;
+  line-height: $body-line-height;
+}
+
+.button-text {
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  letter-spacing: $button-letter-spacing;
+}
+
+.overline-text {
+  font-family: $overline-font-family;
+  font-size: $overline-font-size;
+  font-weight: $overline-font-weight;
+  letter-spacing: $overline-letter-spacing;
+}
+
+body {
+  background-color: $cream;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 1rem;
+  overflow: hidden;
+
+  .image_mobile {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .image_desktop {
+    display: none;
+  }
+
+  .details {
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 12px;
+
+    .type {
+      color: $aurometal-saurus;
+      text-transform: uppercase;
+    }
+
+    .title {
+      color: $gunmetal;
+      margin-bottom: func.rem(16px);
+    }
+
+    .desc {
+      color: $aurometal-saurus;
+    }
+
+    .price {
+      display: flex;
+      column-gap: func.rem(16px);
+      align-items: center;
+      margin-top: func.rem(4px);
+      .new {
+        color: $deep-aquamarine;
+      }
+      .old {
+        color: $aurometal-saurus;
+        font-size: func.rem(13px);
+        font-weight: 500;
+        text-decoration: line-through;
+      }
+    }
+
+    button {
+      background-color: $deep-aquamarine;
+      border: none;
+      border-radius: func.rem(8px);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: func.rem(12px);
+      margin-top: func.rem(8px);
+      padding: func.rem(12px) 0;
+      width: 100%;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $deep-aquamarine-hover;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .product-card {
+    flex-direction: row;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .image_mobile {
+      display: none;
+    }
+    .image_desktop {
+      display: block;
+      width: 300px;
+    }
+
+    .details {
+      padding: 2rem 2rem;
+      justify-content: space-between;
+
+      button {
+        padding: func.rem(16px) 0;
+      }
+    }
+  }
+}

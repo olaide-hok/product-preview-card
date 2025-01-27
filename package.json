@@ -1,0 +1,30 @@
+{
+    "name": "product-preview-card-component-main",
+    "version": "1.0.0",
+    "description": "A product preview card component",
+    "main": "index.js",
+    "scripts": {
+        "watch:scss": "sass -w styles/style.scss styles/style.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/olaide-hok/product-preview-card.git"
+    },
+    "keywords": [
+        "HTML",
+        "CSS",
+        "SASS"
+    ],
+    "author": "Habeeb Kareem",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/olaide-hok/product-preview-card/issues"
+    },
+    "homepage": "https://github.com/olaide-hok/product-preview-card#readme",
+    "dependencies": {
+        "sass": "^1.83.4"
+    },
+    "devDependencies": {
+        "@awmottaz/prettier-plugin-void-html": "^1.7.0"
+    }
+}
